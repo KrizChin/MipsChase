@@ -103,4 +103,13 @@ public class Player : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = stateColors[(int)m_nState];
     }
+
+    void Update()
+    {
+        UpdateDirectionAndSpeed();
+        m_fSpeed = Mathf.MoveTowards(m_fSpeed, m_fTargetSpeed, m_fIncSpeed);
+        m_fAngle = Mathf.LerpAngle(m_fAngle, m_fTargetAngle, 0.2f);
+        transform.rotation = Quaternion.Euler(0f, 0f, m_fAngle);
+        transform.position += (-transform.right * m_fSpeed);
+    }
 }
