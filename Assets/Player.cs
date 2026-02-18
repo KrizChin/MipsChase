@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float m_fMagnitudeSlow = 0.05f;
     public float m_fFastRotateSpeed = 0.2f;
     public float m_fFastRotateMax = 10.0f;
-    public float m_fDiveTime = 0.4f;
+    public float m_fDiveTime = 0.3f;
     public float m_fDiveRecoveryTime = 0.5f;
     public float m_fDiveDistance = 3.0f;
 
@@ -180,6 +180,6 @@ public class Player : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(0f, 0f, m_fAngle);
         transform.position += (-transform.right * m_fSpeed * Time.deltaTime);
-        Debug.Log("Speed: " + m_fSpeed + "   Target: " + m_fTargetSpeed);
+        //Debug.Log("Speed: " + m_fSpeed + "   Target: " + m_fTargetSpeed);
     }
 }
