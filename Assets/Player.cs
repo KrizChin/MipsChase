@@ -5,14 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // External tunables.
-    public float m_fMaxSpeed = 5.0f;
+    public float m_fMaxSpeed = 6.0f;
     public float m_fSlowSpeed = 3.0f;
-    public float m_fIncSpeed = 2.0f;
-    public float m_fMagnitudeFast = 0.15f;
+    public float m_fIncSpeed = 3.0f;
+    public float m_fMagnitudeFast = 0.25f;
     public float m_fMagnitudeSlow = 0.05f;
     public float m_fFastRotateSpeed = 0.2f;
     public float m_fFastRotateMax = 10.0f;
-    public float m_fDiveTime = 0.3f;
+    public float m_fDiveTime = 0.4f;
     public float m_fDiveRecoveryTime = 0.5f;
     public float m_fDiveDistance = 3.0f;
 
@@ -77,15 +77,12 @@ public class Player : MonoBehaviour
         Vector3 vScreenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 vScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         Vector2 vOffset = new Vector2(transform.position.x - vScreenPos.x, transform.position.y - vScreenPos.y);
-        Debug.Log("Mouse world pos: " + vScreenPos);
         // Find the target angle being requested.
         m_fTargetAngle = Mathf.Atan2(vOffset.y, vOffset.x) * Mathf.Rad2Deg;
 
         // Calculate how far away from the player the mouse is.
         float fMouseMagnitude = vOffset.magnitude / vScreenSize.magnitude;
-        Debug.Log("MouseMagnitude: " + fMouseMagnitude +
-                    "   Slow Thresh: " + m_fMagnitudeSlow +
-                    "   Fast Thresh: " + m_fMagnitudeFast);
+        //Debug.Log("MouseMagnitude: " + fMouseMagnitude + "  Slow Thresh: " + m_fMagnitudeSlow + "    Fast Thresh: " + m_fMagnitudeFast);
         // Based on distance, calculate the speed the player is requesting.
         if (fMouseMagnitude > m_fMagnitudeFast)
         {
@@ -99,7 +96,6 @@ public class Player : MonoBehaviour
         {
             m_fTargetSpeed = 0.0f;
         }
-        Debug.Log("Target Speed set to: " + m_fTargetSpeed);
     }
 
     void FixedUpdate()
@@ -154,7 +150,7 @@ public class Player : MonoBehaviour
                     m_fSpeed = Mathf.MoveTowards(m_fSpeed, m_fTargetSpeed, accel);
 
                     // After building speed, enter fast state.
-                    if (m_fSpeed >= m_fSlowSpeed && m_fTargetSpeed > 0.0f)
+                    if (m_fSpeed > m_fSlowSpeed && m_fTargetSpeed > 0.0f)
                     {
                         m_nState = eState.kMoveFast;
                     }

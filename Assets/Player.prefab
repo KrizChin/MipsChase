@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 3072852383546661094}
   - component: {fileID: 7323805841229196608}
   - component: {fileID: 3217294242109312631}
-  - component: {fileID: -3959119096623955656}
+  - component: {fileID: 6373490889799926543}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -252,7 +252,7 @@ PolygonCollider2D:
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
   m_UseDelaunayMesh: 1
---- !u!114 &-3959119096623955656
+--- !u!114 &6373490889799926543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,10 +264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3e88283053c35498306ce421311774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  m_fSlowSpeed: 3.6000001
-  m_fIncSpeed: 0.6
-  m_fMagnitudeFast: 0.6
-  m_fMagnitudeSlow: 0.06
+  m_fMaxSpeed: 5
+  m_fSlowSpeed: 3
+  m_fIncSpeed: 4
+  m_fMagnitudeFast: 0.25
+  m_fMagnitudeSlow: 0.05
   m_fFastRotateSpeed: 0.2
   m_fFastRotateMax: 10
   m_fDiveTime: 0.3
