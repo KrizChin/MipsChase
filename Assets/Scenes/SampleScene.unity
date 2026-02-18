@@ -239,6 +239,26 @@ PrefabInstance:
       propertyPath: m_fMagnitudeFast
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: -3959119096623955656, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
+      propertyPath: m_fIncSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3959119096623955656, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
+      propertyPath: m_fMaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3959119096623955656, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
+      propertyPath: m_fSlowSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3959119096623955656, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
+      propertyPath: m_fMagnitudeFast
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: -3959119096623955656, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
+      propertyPath: m_fMagnitudeSlow
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2572352322406527498, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -330,14 +350,6 @@ PrefabInstance:
     - target: {fileID: 5260039168577115711, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
       propertyPath: m_Color.r
       value: 0.85882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_fIncSpeed
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_fSlowSpeed
-      value: 0.6600001
       objectReference: {fileID: 0}
     - target: {fileID: 7323805841229196608, guid: e2ee0c231ba124841927c2b7ea5b8bd0, type: 3}
       propertyPath: m_Color.b
